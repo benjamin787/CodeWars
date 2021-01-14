@@ -3,3 +3,5 @@ function narcissistic(value) {
     .reduce((sum, i) => sum + i**(value.toString().length), 0)
     )
 }
+
+
