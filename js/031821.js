@@ -55,3 +55,24 @@ const sumPairs = (ints, s) => {
 }
 
 // failed
+
+id
+function sum_pairs(ints, s) {
+  let seen = new Set();
+  for (let i of ints) {
+    if (seen.has(s - i)) return [s - i, i];
+    seen.add(i);
+  }
+}
+
+var sum_pairs=function(ints, s){
+  var seen = {}
+  for (var i = 0; i < ints.length; ++i) {
+    if (seen[s - ints[i]]) return [s - ints[i], ints[i]];
+    seen[ints[i]] = true
+  }
+}
+
+// no clue why the latter 2 fxs work (they're not mine)
+// ([0,1,2,3,4], 5) would yield [1,4], which is explicitly incorrect in the instruction. should be [2,3]
+// but these are the recommended solutions
